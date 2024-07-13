@@ -8,7 +8,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             query: () => ({
                 url: `${TASKS_URL}/dashboard`,
                 method:"GET",
-                credentials: "omit",
+                credentials: "include",
             }),
         }),
 
@@ -16,7 +16,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
         query: ({strQuery, isTrashed, search}) => ({
             url: `${TASKS_URL}?stage=${strQuery}&isTrashed=${isTrashed}&search=${search}`,
             method:"GET",
-            credentials: "omit",
+            credentials: "include",
         }),
     }),
 
@@ -25,7 +25,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/create`,
             method:"POST",
             body: data,
-            credentials: "omit",
+            credentials: "include",
         }),
     }),
 
@@ -34,7 +34,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/duplicate/${id}`,
             method: "POST",
             body: {},
-            credentials:"omit",
+            credentials:"include",
         }),
     }),
 
@@ -43,7 +43,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/update/${data._id}`,
             method: "PUT",
             body: data,
-            credentials: "omit",
+            credentials: "include",
         }),
      }),
 
@@ -51,7 +51,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
         query: ({id}) => ({
             url: `${TASKS_URL}/${id}`,
             method: "PUT",
-            credentials: "omit",
+            credentials: "include",
         }),
      }),
 
@@ -60,7 +60,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/create-subtask/${id}`,
             method: "PUT",
             body: data,
-            credentials: "omit",
+            credentials: "include",
         }),
      }),
 
@@ -68,7 +68,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
         query: ({id, actionType}) => ({
             url: `${TASKS_URL}/delete-restore/${id}?actionType=${actionType}`,
             method: "DELETE",
-            credentials: "omit",
+            credentials: "include",
         }),
      }),
 
@@ -76,7 +76,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
         query: (id) => ({
             url: `${TASKS_URL}/${id}`,
             method: "GET",
-            credentials: "omit",
+            credentials: "include",
         }),
      }),
 
@@ -85,7 +85,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
             url: `${TASKS_URL}/activity/${id}`,
             method: "POST",
             body: data,
-            credentials: "omit",
+            credentials: "include",
         }),
      }),
     }),
