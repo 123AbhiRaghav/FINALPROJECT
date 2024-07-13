@@ -9,7 +9,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
              url: `${USER_URL}/profile`,
              method: "PUT",
              body: data,
-             credentials: true,
+             credentials: "same-origin",
          }),
      }),
  
@@ -18,7 +18,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
              url: `${USER_URL}/register`,
              method: "POST",
              body: data,
-             credentials: true,
+             credentials: "same-origin",
          }),
      }),
 
@@ -26,7 +26,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         query: () => ({
             url: `${USER_URL}/get-team`,
             method: "GET",
-            credentials: true,
+            credentials: "same-origin",
         }),
     }),
 
@@ -34,7 +34,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         query: (id) => ({
             url: `${USER_URL}/${id}`,
             method: "DELETE",
-            credentials: true,
+            credentials: "same-origin",
         }),
     }),
 
@@ -43,7 +43,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
             url: `${USER_URL}/${data.id}`,
             method: "PUT",
             body:data,
-            credentials: true,
+            credentials: "same-origin",
         }),
     }),
    
@@ -51,7 +51,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         query: () => ({
             url: `${USER_URL}/notifications`,
             method: "GET",
-            credentials: true,
+            credentials: "same-origin",
         }),
     }),
 
@@ -60,7 +60,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
             url: `${USER_URL}/read-noti?isReadType = ${data.type}&id=${data?.id}`,
             method: "PUT",
             body:data,
-            credentials: true,
+            credentials: "same-origin",
         }),
     }),
 
@@ -69,7 +69,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
             url: `${USER_URL}/change-password`,
             method: "PUT",
             body: data,
-            credentials: true,
+            credentials: "same-origin",
         }),
     }),
     }),
